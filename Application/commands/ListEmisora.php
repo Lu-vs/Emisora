@@ -1,16 +1,16 @@
 <?php
 namespace Application\commands;
 
-use Infrastructure\PostgresEmisoraRepository;
+use Domain\EmisoraRepositoryInterface;
 
 class ListEmisora {
-    private $repository;
+    private EmisoraRepositoryInterface $repository;
 
-    public function __construct(PostgresEmisoraRepository $repository) {
+    public function __construct(EmisoraRepositoryInterface $repository) {
         $this->repository = $repository;
     }
 
-    public function execute() {
+    public function execute(): array {
         return $this->repository->getAll();
     }
 }

@@ -1,16 +1,16 @@
 <?php
 namespace Application\commands;
 
-use Infrastructure\PostgresEmisoraRepository;
+use Domain\EmisoraRepositoryInterface;
 
 class DeleteEmisora {
-    private $repository;
+    private EmisoraRepositoryInterface $repository;
 
-    public function __construct(PostgresEmisoraRepository $repository) {
+    public function __construct(EmisoraRepositoryInterface $repository) {
         $this->repository = $repository;
     }
 
-    public function execute($id) {
+    public function execute(int $id): void {
         $this->repository->delete($id);
     }
 }
