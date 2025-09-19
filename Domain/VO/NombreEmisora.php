@@ -1,7 +1,7 @@
 <?php
 namespace Domain\VO;
 
-class NombreEmisora{
+class NombreEmisora {
     private string $value;
 
     public function __construct(string $value) {
